@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Group Tabs to the Right",
-  "version": "1.5",
+  "version": "1.5.1",
+  "version_name": "1.5-MandateUpdate",
   "description": "Adds all tabs to the right of the current tab to a tab group via button press or Alt-Shift-G.",
-  "permissions": ["tabs", "tabGroups"],
+  "permissions": ["tabGroups"],
   "action": {
     "default_title": "Group tabs to the right",
     "default_popup": "popup.html",
