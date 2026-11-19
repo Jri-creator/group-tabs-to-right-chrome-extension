@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root { color-scheme: light dark; }
+    [hidden] { display: none !important; }
+    body { margin: 0; padding: 14px; width: 240px; font: 13px system-ui, sans-serif; }
+    label.title { display: block; font-weight: 600; margin-bottom: 6px; }
+    input[type="text"] {
+      width: 100%; box-sizing: border-box; padding: 7px 8px;
+      border: 1px solid #9aa0a6; border-radius: 6px; font: inherit;
+    }
+    .colors { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .colors input { position: absolute; opacity: 0; pointer-events: none; }
+    .colors label {
+      width: 22px; height: 22px; border-radius: 50%; cursor: pointer;
+      box-sizing: border-box; border: 2px solid transparent;
+    }
+    .colors input:checked + label { outline: 2px solid currentColor; outline-offset: 2px; }
+    .colors input:focus-visible + label { outline: 2px dashed currentColor; outline-offset: 2px; }
+    .transfer { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 12px; cursor: pointer; }
+    .transfer input { margin: 2px 0 0; }
+    button {
+      width: 100%; padding: 8px; border: 0; border-radius: 6px; cursor: pointer;
+      background: #1a73e8; color: #fff; font: inherit; font-weight: 600;
+    }
+    #msg { margin: 0 0 10px; }
+  </style>
+</head>
+<body>
+  <p id="msg" hidden></p>
+  <form id="form" hidden>
+    <div id="newGroupFields">
+      <label class="title" for="name">New group name</label>
+      <input type="text" id="name" autocomplete="off" placeholder="Optional">
+      <div class="colors" id="colors" role="radiogroup" aria-label="Group colour"></div>
+    </div>
+    <label class="transfer" id="transferRow" hidden>
+      <input type="checkbox" id="transfer">
+      <span id="transferText">Transfer grouped tabs to this group</span>
+    </label>
+    <button type="submit" id="submit">Group tabs</button>
+  </form>
+  <script src="popup.js"></script>
+</body>
+</html>
